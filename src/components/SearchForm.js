@@ -37,14 +37,16 @@ export default class SearchForm extends Component {
             <Form inline onSubmit={this.onSubmit}>
               <FormGroup className="mb-2 mr-sm-2 mb-sm-0">
                 <Input
-                  type="text"
+                  type="number"
                   name="magnitude"
                   onChange={this.onChange}
                   value={magnitude}
-                  placeholder="Search by magnitude"
+                  placeholder="Enter a value (e.g. 4.20)"
                 />
               </FormGroup>
-              <Button>Search by magnitude</Button>
+              <Button onClick={() => this.props.filterUsingMagnitude(magnitude)}>
+                Search by magnitude
+              </Button>
             </Form>
           </Col>
           <Col xs="6">
@@ -55,10 +57,12 @@ export default class SearchForm extends Component {
                   name="magtype"
                   onChange={this.onChange}
                   value={magtype}
-                  placeholder="Search by magtype"
+                  placeholder="Search by magnitude type"
                 />
               </FormGroup>
-              <Button>Search by magtype</Button>
+              <Button onClick={() => this.props.filterUsingMagnitudeType(magtype)}>
+                Filter by magintude type
+              </Button>
             </Form>
           </Col>
         </Row>

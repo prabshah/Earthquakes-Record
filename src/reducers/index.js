@@ -1,9 +1,8 @@
 import { combineReducers } from "redux";
 import fetchEarthquakeDataReducer from "./fetchEarthquakeDataReducer";
-import filterByMagnitudeReducer from "./filterByMagnitudeReducer";
+
 const rootReducer = combineReducers({
-  earthquake: fetchEarthquakeDataReducer,
-  filterByMagnitude: filterByMagnitudeReducer
+  earthquakes: fetchEarthquakeDataReducer
 });
 
 export default rootReducer;
