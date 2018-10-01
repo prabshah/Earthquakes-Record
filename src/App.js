@@ -7,9 +7,8 @@ import {
   fetchEarthquakeData,
   filterByMagnitude,
   filterByMagType
-} from "./actions/index";
+} from "./actions";
 
-import "./App.css";
 import Navbar from "./components/Navbar";
 import SearchForm from "./components/SearchForm";
 import EarthquakeDataList from "./components/EarthquakeDataList";
@@ -28,12 +27,10 @@ class App extends Component {
     if (type === MAGNITUDE) {
       return this.props.filterByMagnitude(value, storeState);
     }
-
     return this.props.filterByMagType(value, storeState);
   };
 
   render() {
-    console.log(this.props);
     return (
       <Fragment>
         <Navbar />

@@ -6,7 +6,10 @@ const capitalizeFirstChar = string => {
 };
 
 export default class EarthquakeDataList extends Component {
-  renderLists = data => {
+  renderList = data => {
+    if (data.length === 0)
+      return <p className="text-warning p-5 border lead">No record found!</p>;
+
     return data.map(dataList => {
       const id = dataList.id ? capitalizeFirstChar(dataList.id) : null;
       const place = dataList.properties.place;
@@ -29,10 +32,7 @@ export default class EarthquakeDataList extends Component {
           List of places where earthquakes have happened
         </h4>
         <ListGroup className="mt-2">
-          {this.props.earthquakes.length === 0 && (
-            <p className="text-warning p-5 border lead">No record found!</p>
-          )}
-          {this.renderLists(this.props.earthquakes)}
+          {this.renderList(this.props.earthquakes)}
         </ListGroup>
       </Fragment>
     );

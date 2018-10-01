@@ -10,8 +10,7 @@ export default function(state = initialState, action) {
         filteredList: action.payload.data.features
       };
     case FILTER_EARTHQUAKES:
-      console.log('coming', action.payload);
-      return { ...state, filteredList: action.payload }
+      return { ...state, filteredList: action.payload };
     default:
       return state;
   }
